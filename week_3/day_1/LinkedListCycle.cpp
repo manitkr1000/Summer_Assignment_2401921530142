@@ -1,1 +1,22 @@
 
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode *slow=head;
+        ListNode *fast=head;
+
+        while(fast!=NULL &&fast->next !=NULL){
+            slow = slow->next;
+           // move 1 steps
+            fast =fast->next->next;
+           // move 2 steps
+            if(slow==fast){
+                return true;
+               // cycle found
+            }
+        }
+        return false;
+       // no cycle
+        
+    }
+};
